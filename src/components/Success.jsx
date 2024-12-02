@@ -1,18 +1,19 @@
 import React from "react";
 import "../assets/css/Success.css";
+import Header from "./Header";
 
 function Success() {
   return (
-    <main className="success-container">
-      <header className="header-container">
-        <img src={Logo} alt="Logo" className="logo" />
-      </header>
-      <h1>
-        TEBRİKLER!
-        <br />
-        SİPARİŞİNİZ ALINDI!
-      </h1>
-    </main>
+    <>
+      <Header />
+      <main className="success-container">
+        <h1>
+          TEBRİKLER!
+          <br />
+          SİPARİŞİNİZ ALINDI!
+        </h1>
+      </main>
+    </>
   );
 }
 
