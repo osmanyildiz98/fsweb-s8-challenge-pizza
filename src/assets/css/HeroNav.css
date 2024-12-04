@@ -1,0 +1,12 @@
+.heronav {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.heronav div {
+  display: flex;
+  gap: 0.5rem;
+}

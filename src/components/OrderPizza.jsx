@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import "../assets/css/OrderPizza.css";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import Header from "./Header";
+import Footer from "./Footer";
+import "../assets/css/OrderPizza.css";
 
 const pizzaSize = ["Küçük", "Orta", "Büyük"];
-const pizzaEdge = ["Hamur Kalınlığı", "İnce", "Normal", "Kalın"];
+const pizzaEdge = ["İnce", "Normal", "Kalın"];
 const selections = [
   "Pepperoni",
   "Tavuk Izgara",
@@ -20,36 +22,71 @@ const selections = [
   "Domates",
   "Jalepeno",
 ];
+const errorMessage = {
+  usarname: "En az 3 karakter içermeli!",
+  size: "*",
+  thick: "*",
+  pizzaItems: "En az 3 en fazla 10 seçim yapmalısınız!",
+};
 
 function OrderPizza() {
+  const [isValid, setIsValid] = useState(false);
   const [count, setCount] = useState(0);
-  const [selectedItems, setSelectedItems] = useState([]);
   const [formData, setFormData] = useState({
     username: "",
     size: "",
     thick: "",
-    selections: selectedItems,
+    pizzaItems: [],
     note: "",
   });
+  const [error, setError] = useState({
+    username: true,
+    size: true,
+    thick: true,
+    pizzaItems: true,
+  });
+
+  useEffect(() => {
+    if (!error.username && !error.size && !error.thick && !error.pizzaItems) {
+      setIsValid(true);
+    }
+  }, [error]);
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    let newSelectedItems = [];
-    let newFormData = {};
+    const { name, value, type } = event.target;
+    let newFormData = { ...formData };
     if (type === "checkbox") {
-      if (selectedItems.includes(value)) {
-        newSelectedItems = selectedItems.filter((item) => item !== value);
-      } else {
-        newSelectedItems = [...selectedItems, value];
-      }
+      const updatedPizzaItems = formData.pizzaItems.includes(value)
+        ? formData.pizzaItems.filter((item) => item !== value)
+        : [...formData.pizzaItems, value];
+      newFormData.pizzaItems = updatedPizzaItems;
     } else {
-      newFormData = { ...formData, [name]: value };
+      newFormData[name] = value;
     }
 
-    setSelectedItems(newSelectedItems);
-    setFormData(newFormData);
-    console.log(newSelectedItems);
+    setError((prevError) => ({
+      ...prevError,
+      username: newFormData.username.trim().length >= 4 ? false : true,
+      size: newFormData.size === "" ? true : false,
+      thick: newFormData.thick === "" ? true : false,
+      pizzaItems:
+        newFormData.pizzaItems.length >= 4 &&
+        newFormData.pizzaItems.length <= 10
+          ? false
+          : true,
+    }));
     console.log(newFormData);
+    setFormData(newFormData);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!isValid) return;
+
+    axios
+      .post("https://reqres.in/api/pizza", formData)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.warn(error));
   };
 
   return (
@@ -88,7 +125,7 @@ function OrderPizza() {
             </p>
           </section>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="radio-select">
               <fieldset className="pizzaSize-radio">
                 <legend>Boyut Seç</legend>
@@ -110,6 +147,7 @@ function OrderPizza() {
               <fieldset className="pizzaEdge-select">
                 <legend>Hamur Seç</legend>
                 <select name="thick" id="thick" onChange={handleChange}>
+                  <option value="">Hamur Kalınlığı</option>
                   {pizzaEdge.map((item, index) => {
                     return (
                       <option key={index} value={item}>
@@ -129,8 +167,9 @@ function OrderPizza() {
                     <div key={index}>
                       <input
                         type="checkbox"
-                        name="selections"
+                        name="pizzaItems"
                         id={item}
+                        value={item}
                         onChange={handleChange}
                       />
                       <label htmlFor={item}>{item}</label>
@@ -184,12 +223,17 @@ function OrderPizza() {
                   Toplam<span>110.50₺</span>
                 </p>
 
-                <button className="submit-btn">Sipariş Ver</button>
+                <button disabled={!isValid} className="submit-btn">
+                  Sipariş Ver
+                </button>
               </div>
             </fieldset>
           </form>
         </main>
       </div>
+      <footer className="order-pizza-footer">
+        <Footer />
+      </footer>
     </>
   );
 }

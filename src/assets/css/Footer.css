@@ -1,0 +1,88 @@
+menu h3,
+.insta-container h3 {
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+/*! Footer Top */
+
+.footer-top {
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+  padding: 0 200px;
+}
+
+/*! Adress*/
+
+.footer-logo {
+  width: 250px;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  align-self: start;
+  margin-top: 50px;
+}
+
+adress div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+addres p {
+  font-size: 18px;
+}
+
+.iconOne {
+  margin-bottom: 20px;
+}
+
+/*! Menu */
+
+menu {
+  height: 300px;
+}
+
+menu ul {
+  list-style: none;
+  line-height: 40px;
+  padding: 0;
+  font-size: 18px;
+}
+
+/*! Instagram */
+
+.insta-container {
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.insta-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*! Footer Bottom*/
+
+.footer-bottom {
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+}

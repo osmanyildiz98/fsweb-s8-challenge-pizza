@@ -1,7 +1,10 @@
 import React from "react";
-import "../assets/css/Home.css";
-import Header from "./Header";
 import { useHistory } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import HeroNav from "./HeroNav";
+import CtaContainer from "./CtaContainer";
+import "../assets/css/Home.css";
 
 function Home() {
   const history = useHistory();
@@ -15,14 +18,21 @@ function Home() {
       <header className="home-header">
         <Header />
       </header>
-      <main className="home-main-container">
-        <h1 className="home-main-header">
+      <hero className="home-hero-container">
+        <h1 className="home-hero-header">
           KOD ACIKTIRIR <br /> PİZZA, DOYURUR
         </h1>
-        <button onClick={goOrderPizza} className="home-main-btn">
+        <button onClick={goOrderPizza} className="home-hero-btn">
           ACIKTIM
         </button>
+      </hero>
+      <HeroNav />
+      <main>
+        <CtaContainer />
       </main>
+      <footer className="home-footer">
+        <Footer />
+      </footer>
     </>
   );
 }

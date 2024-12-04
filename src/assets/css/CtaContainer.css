@@ -1,0 +1,95 @@
+.cta-container {
+  width: 60%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: "Barlow";
+}
+
+/* İmages */
+
+.cta-left,
+.cta-right {
+  width: 48%;
+}
+
+.cta-left,
+.cta-right,
+.cta-right-top,
+.cta-right-bottom {
+  height: 90%;
+}
+
+.cta-left,
+.cta-right-top,
+.cta-right-bottom {
+  border-radius: 0.6rem;
+  background-size: cover;
+  background-position: center;
+  padding: 30px 0 0 30px;
+}
+
+.cta-left {
+  background-image: url("../../../Assets/Iteration-2-aseets/cta/kart-1.png");
+}
+
+.cta-right {
+  height: 97%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-right-top {
+  width: 100%;
+  background-image: url("../../../Assets/Iteration-2-aseets/cta/kart-2.png");
+}
+
+.cta-right-bottom {
+  width: 100%;
+  background-image: url("../../../Assets/Iteration-2-aseets/cta/kart-3.png");
+}
+
+/* Header */
+
+.cta-left h2 {
+  font-family: "Quattrocento", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cta-left p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cta-right h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.cta-right-bottom h2 {
+  color: #292929;
+}
+
+.red {
+  color: #d80027;
+}
+
+/* Button */
+
+.cta-container button {
+  width: 9rem;
+  height: 3rem;
+  border-radius: 3rem;
+  border: none;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ce2829;
+}

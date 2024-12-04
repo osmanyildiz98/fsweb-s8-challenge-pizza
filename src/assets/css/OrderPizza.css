@@ -280,3 +280,9 @@ legend {
   font-size: 18px;
   cursor: pointer;
 }
+
+/*? Footer */
+
+.order-pizza-footer {
+  background-color: #1a1a1a;
+}
