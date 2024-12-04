@@ -19,7 +19,7 @@ function Footer() {
         <adress>
           <img src={Logo} className="footer-logo" />
           <div>
-            <img src={iconOne} className="iconOne" />
+            <img src={iconOne} id="iconOne" />
             <p>
               341 Londonderry Road,
               <br /> Istanbul Türkiye
@@ -48,18 +48,22 @@ function Footer() {
         <div className="insta-container">
           <h3>Instagram</h3>
           <div className="insta-img-container">
-            <img src={instaOne} />
-            <img src={instaTwo} />
-            <img src={instaThree} />
-            <img src={instaFour} />
-            <img src={instaFive} />
-            <img src={instaSix} />
+            <div>
+              <img src={instaOne} />
+              <img src={instaTwo} />
+              <img src={instaThree} />
+            </div>
+            <div>
+              <img src={instaFour} />
+              <img src={instaFive} />
+              <img src={instaSix} />
+            </div>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
         <p>© 2023 Teknolojik Yemekler.</p>
-        <FaTwitter />
+        <FaTwitter className="twitter-icon" />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "../assets/css/OrderPizza.css";
 
-const pizzaSize = ["Küçük", "Orta", "Büyük"];
+const pizzaSize = ["S", "M", "L"];
 const pizzaEdge = ["İnce", "Normal", "Kalın"];
 const selections = [
   "Pepperoni",
@@ -93,21 +93,25 @@ function OrderPizza() {
     <>
       <header className="order-pizza-header">
         <Header />
-        <nav className="order-pizza-header-nav">
-          <NavLink to="/" className="home-link">
-            Anasayfa
-          </NavLink>
-          <span> - </span>
-          <a href="#" className="order-link">
-            Sipariş Oluştur
-          </a>
-        </nav>
       </header>
-      <div className="form-container">
-        <main className="order-pizza-main">
-          <section className="pizza-container">
-            <h2 className="pizza-header">Position Absolute Acı Pizza</h2>
-            <div className="pizza-info">
+
+      <main className="order-pizza-main">
+        <section className="order-pizza-hero-section">
+          <section className="order-pizza-hero-image"></section>
+          <nav className="order-pizza-hero-nav">
+            <NavLink to="/" className="order-pizza-hero-nav-home-link">
+              Anasayfa
+            </NavLink>
+            <span className="order-pizza-hero-nav-home-link-span"> - </span>
+            <a href="#" className="order-pizza-hero-nav-order-link">
+              Sipariş Oluştur
+            </a>
+          </nav>
+          <section className="order-pizza-hero-info">
+            <h2 className="order-pizza-hero-info-header">
+              Position Absolute Acı Pizza
+            </h2>
+            <div className="order-pizza-hero-info-details">
               <p>85.50₺</p>
               <div>
                 <p>4.9</p>
@@ -124,7 +128,9 @@ function OrderPizza() {
               pizzetta denir.
             </p>
           </section>
+        </section>
 
+        <section className="form-section">
           <form onSubmit={handleSubmit}>
             <div className="radio-select">
               <fieldset className="pizzaSize-radio">
@@ -147,7 +153,7 @@ function OrderPizza() {
               <fieldset className="pizzaEdge-select">
                 <legend>Hamur Seç</legend>
                 <select name="thick" id="thick" onChange={handleChange}>
-                  <option value="">Hamur Kalınlığı</option>
+                  <option value="">--Hamur Kalınlığı--</option>
                   {pizzaEdge.map((item, index) => {
                     return (
                       <option key={index} value={item}>
@@ -229,8 +235,9 @@ function OrderPizza() {
               </div>
             </fieldset>
           </form>
-        </main>
-      </div>
+        </section>
+      </main>
+
       <footer className="order-pizza-footer">
         <Footer />
       </footer>

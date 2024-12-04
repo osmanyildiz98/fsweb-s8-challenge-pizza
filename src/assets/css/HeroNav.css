@@ -1,5 +1,5 @@
 .heronav {
-  height: 100px;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,5 +8,6 @@
 
 .heronav div {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }

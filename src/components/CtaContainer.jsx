@@ -27,7 +27,7 @@ function CtaContainer() {
         <div className="cta-right-bottom">
           <h2>
             <span className="red">Çoooook</span> hızlı
-            <br /> npm gibi kurye{" "}
+            <br /> npm gibi kurye
           </h2>
           <button>SİPARİŞ VER</button>
         </div>

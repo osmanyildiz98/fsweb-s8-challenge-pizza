@@ -4,6 +4,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import HeroNav from "./HeroNav";
 import CtaContainer from "./CtaContainer";
+import CtaHeader from "./CtaHeader";
+import CtaNavbar from "./CtaNavbar";
+import CtaMenu from "./CtaMenu";
 import "../assets/css/Home.css";
 
 function Home() {
@@ -27,8 +30,11 @@ function Home() {
         </button>
       </hero>
       <HeroNav />
-      <main>
+      <main className="home-main">
         <CtaContainer />
+        <CtaHeader />
+        <CtaNavbar />
+        <CtaMenu />
       </main>
       <footer className="home-footer">
         <Footer />

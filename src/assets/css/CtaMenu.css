@@ -1,0 +1,44 @@
+.ctamenu-container {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.card div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card div p:nth-child(2) {
+  margin-left: 3rem;
+}
+
+.ctamenu-container > .card > img {
+  width: 12.5rem;
+  align-self: center;
+}
+
+.card h3 {
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 12px;
+}
+
+.card p:nth-child(3) {
+  font-weight: bold;
+}

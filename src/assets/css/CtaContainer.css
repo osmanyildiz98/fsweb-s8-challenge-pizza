@@ -1,25 +1,24 @@
 .cta-container {
   width: 60%;
-  height: 25rem;
+  height: 25em;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.7rem;
   font-family: "Barlow";
+  gap: 0.5rem;
 }
 
 /* İmages */
 
 .cta-left,
 .cta-right {
-  width: 48%;
+  width: 50%;
+  height: 95%;
 }
 
-.cta-left,
-.cta-right,
 .cta-right-top,
 .cta-right-bottom {
-  height: 90%;
+  height: 95%;
 }
 
 .cta-left,
@@ -28,7 +27,6 @@
   border-radius: 0.6rem;
   background-size: cover;
   background-position: center;
-  padding: 30px 0 0 30px;
 }
 
 .cta-left {
@@ -36,10 +34,9 @@
 }
 
 .cta-right {
-  height: 97%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .cta-right-top {
@@ -56,21 +53,32 @@
 
 .cta-left h2 {
   font-family: "Quattrocento", serif;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #ffffff;
+  padding: 30px 0 0 30px;
 }
 
 .cta-left p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
+  padding-left: 30px;
+}
+
+.cta-left button {
+  margin-left: 30px;
 }
 
 .cta-right h2 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffffff;
+  padding: 30px 0 0 30px;
+}
+
+.cta-right button {
+  margin: 20px 0 0 30px;
 }
 
 .cta-right-bottom h2 {
@@ -84,12 +92,12 @@
 /* Button */
 
 .cta-container button {
-  width: 9rem;
-  height: 3rem;
-  border-radius: 3rem;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 2rem;
   border: none;
   background-color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   color: #ce2829;
 }
